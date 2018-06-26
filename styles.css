@@ -1,0 +1,281 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  color: #434344;
+
+  background-color: #cfd0cf;
+}
+.page__game {
+  margin: 0 auto;
+}
+.game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 95%;
+  min-width: 315px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.page__title {
+  font-size: 42px;
+  line-height: 47px;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  .page__title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+.game__title {
+  margin: 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 0;
+  padding: 0 15px;
+}
+@media (max-width: 500px) {
+  .game__title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+.game__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 645px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.game__card {
+  margin: 0;
+  margin: 0 12.5px 25px 12.5px;
+}
+@media (max-width: 500px) {
+  .game__card {
+    margin: 0 8px 16px 8px;
+  }
+}
+.card {
+  position: relative;
+
+  -ms-flex-negative: 0;
+
+      flex-shrink: 0;
+  display: block;
+  width: 130px;
+  height: 130px;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+
+  text-align: center;
+  /*font-size: 75px;*/
+
+        
+  -webkit-perspective: 600px;
+
+        
+          perspective: 600px;
+     
+}
+@media(max-width: 500px) {
+  .card {
+    width: 80px;
+    height: 80px; 
+  }
+}
+.card__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+
+  background-color: #ffffff;
+  border-radius: 9px;
+  border: 5px solid #ffffff;
+        
+  -webkit-transform: rotateY(180deg);
+        
+          transform: rotateY(180deg);
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.card__front {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+
+  background-image: -webkit-linear-gradient(45deg, #22ab93, #19668d);
+
+  background-image: -o-linear-gradient(45deg, #22ab93, #19668d);
+
+  background-image: linear-gradient(45deg, #22ab93, #19668d);
+  border-radius: 9px;
+  border: 5px solid #ffffff;
+
+        
+  -webkit-transition: 0.3s;
+
+        
+  -o-transition: 0.3s;
+
+        
+  transition: 0.3s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 500px) {
+  .card__back,
+  .card__front {
+    border-radius: 7px;
+    border: 3px solid #ffffff;
+  }
+}
+.card__back--flipped {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+.card__front--flipped {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.card__back--green {
+  background-color: green;
+}
+.card__back--red {
+  background-color: red;
+}
+
+.game__timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 15px;
+  font-size: 32px;
+  font-weight: 700;
+}
+@media(max-width: 500px) {
+  .game__timer {
+    margin: 10px;
+    font-size: 22px; 
+  }
+}
+.timer-minute {
+  display: block;
+}
+.timer-second {
+  display: block;
+}
+
+.modal-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+ 
+  min-width: 350px;
+  padding: 30px ;
+
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+
+  background-color: #ffffff;
+}
+
+.result-window--closed {
+  display: none;
+}
+
+.modal-window__title {
+  margin: 0 0 40px 0;
+  padding: 0;
+
+  font-size: 48px;
+}
+@media(max-width: 500px) {
+  .modal-window__title {
+    
+  }
+}
+.result-window__button {
+  padding: 10px 30px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#19668d), to(#22ab93));
+
+  background-image: -webkit-linear-gradient(#19668d, #22ab93);
+
+  background-image: -o-linear-gradient(#19668d, #22ab93);
+
+  background-image: linear-gradient(#19668d, #22ab93);
+  border: none;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 9px
+}
+.result-window__button:focus,
+.result-window__button:hover {
+  outline: none;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#08557c), to(#119a82));
+  background-image: -webkit-linear-gradient(#08557c, #119a82);
+  background-image: -o-linear-gradient(#08557c, #119a82);
+  background-image: linear-gradient(#08557c, #119a82);
+}
+.result-window__button:active {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#19668d), to(#22ab93));
+  background-image: -webkit-linear-gradient(#19668d, #22ab93);
+  background-image: -o-linear-gradient(#19668d, #22ab93);
+  background-image: linear-gradient(#19668d, #22ab93);
+  -webkit-box-shadow: inset 2px 1px 8px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 2px 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.card__back img {
+  width: 100%;
+  height: auto;
+}
